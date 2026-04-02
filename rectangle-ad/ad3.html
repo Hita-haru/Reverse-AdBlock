@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Ad 300x250</title>
+    <style>
+        /* 基本設定 */
+        body, html { margin: 0; padding: 0; overflow: hidden; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+        
+        .ad-container {
+            width: 300px;
+            height: 250px;
+            background: linear-gradient(180deg, #fff5f7 0%, #ffe0e9 100%);
+            border: 1px solid #f8bbd0;
+            box-sizing: border-box;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 輝く粒子の背景 */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle-anim 3s infinite;
+        }
+
+        @keyframes sparkle-anim {
+            0% { transform: translateY(0) scale(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+
+        /* メインコピー */
+        .copy-container {
+            z-index: 2;
+            text-align: center;
+        }
+
+        .catch-phrase {
+            font-size: 14px;
+            color: #d81b60;
+            letter-spacing: 0.1em;
+            margin-bottom: 5px;
+        }
+
+        .main-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #444;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .main-title span {
+            color: #d81b60;
+            font-size: 28px;
+        }
+
+        /* 商品イメージ（抽象的な円形シェイプ） */
+        .product-shape {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 30% 30%, #ffffff, #fce4ec);
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(216, 27, 96, 0.1);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ボタン */
+        .cta-button {
+            background: #d81b60;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        /* 特典タグ */
+        .offer-tag {
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: #ffb300;
+            color: #fff;
+            padding: 5px 35px;
+            font-size: 10px;
+            font-weight: bold;
+            transform: rotate(40deg);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 3;
+        }
+
+        /* ホバー演出 */
+        .ad-container:hover .cta-button {
+            background: #ad1457;
+            transform: scale(1.05);
+        }
+
+        .ad-container:hover .product-shape {
+            transform: scale(1.1) rotate(5deg);
+            transition: 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" onclick="location.href='https://google.com'">
+        <div class="sparkle" style="left:20%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="left:50%; animation-delay: 1s;"></div>
+        <div class="sparkle" style="left:80%; animation-delay: 2s;"></div>
+        
+        <div class="offer-tag">初回半額</div>
+
+        <div class="copy-container">
+            <div class="catch-phrase">目覚める、本来の輝き。</div>
+            <div class="main-title">
+                翌朝の肌に、<br>
+                <span>感動のハリ。</span>
+            </div>
+        </div>
+
+        <div class="product-shape"></div>
+
+        <div class="cta-button">特別セットを試してみる</div>
+        
+        <div style="font-size: 9px; color: #888; margin-top: 10px; z-index: 2;">
+            FAKE SERUM - プレミアム美容液
+        </div>
+    </div>
+
+</body>
+</html>

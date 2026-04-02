@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaser Ad 300x250</title>
+    <style>
+        body, html { margin: 0; padding: 0; overflow: hidden; font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; }
+        
+        .ad-container {
+            width: 300px;
+            height: 250px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* 質問ラベル */
+        .category-tag {
+            display: inline-block;
+            background: #333;
+            color: white;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            width: fit-content;
+            margin-bottom: 12px;
+        }
+
+        /* メインコピー：疑問を投げかける */
+        .question-text {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.5;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #d32f2f;
+            text-decoration: underline;
+        }
+
+        /* 視覚的フック（図解・アイコン） */
+        .visual-box {
+            background: #fff;
+            border: 1px dashed #bbb;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .visual-box::after {
+            content: "？";
+            font-size: 40px;
+            color: #eee;
+            font-weight: bold;
+        }
+
+        /* 「続きを読む」セクション */
+        .footer-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .action-text {
+            font-size: 13px;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .arrow-icon {
+            width: 24px;
+            height: 24px;
+            background: #0066cc;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .arrow-icon::before {
+            content: "";
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            width: 6px;
+            height: 6px;
+            border-top: 2px solid white;
+            border-right: 2px solid white;
+            transform: rotate(45deg);
+        }
+
+        /* ホバー時の動き */
+        .ad-container:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+
+        .ad-container:hover .action-text {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" onclick="location.href='https://google.com'">
+        <div class="category-tag">豆知識</div>
+        
+        <div class="question-text">
+            9割の人が誤解している、<br>
+            効率的な<span class="highlight">「記憶の定着法」</span>とは？
+        </div>
+
+        <div class="visual-box">
+            <div style="font-size: 12px; color: #888;">
+                [ 脳科学の最新データに基づく ]
+            </div>
+        </div>
+
+        <div class="footer-area">
+            <div class="action-text">答えをチェックする</div>
+            <div class="arrow-icon"></div>
+        </div>
+    </div>
+
+</body>
+</html>

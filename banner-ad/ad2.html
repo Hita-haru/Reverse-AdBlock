@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Accel Ad</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+        }
+
+        /* 広告枠の基本設定 */
+        .ad-container {
+            width: 728px;
+            height: 90px;
+            background: #0f172a; /* ダークネイビー */
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        /* 背景の斜めライン装飾 */
+        .bg-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(115deg, #0f172a 60%, #1e40af 60%, #1e40af 62%, #0f172a 62%);
+            z-index: 1;
+        }
+
+        /* ロゴセクション */
+        .brand-section {
+            width: 180px;
+            padding-left: 20px;
+            z-index: 2;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .brand-name {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-name span {
+            color: #fbbf24; /* アクセントイエロー */
+            margin-right: 4px;
+        }
+
+        .brand-sub {
+            color: #94a3b8;
+            font-size: 9px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* メインコピー */
+        .message-section {
+            flex-grow: 1;
+            padding-left: 30px;
+            z-index: 2;
+        }
+
+        .main-msg {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .main-msg span {
+            background: linear-gradient(transparent 60%, #1e40af 60%);
+        }
+
+        .sub-msg {
+            color: #fbbf24;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
+        /* CTAボタン */
+        .cta-section {
+            padding-right: 25px;
+            z-index: 2;
+        }
+
+        .cta-btn {
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 0 #b45309;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #b45309;
+            background: #fcd34d;
+        }
+
+        /* アニメーション：右から左へ流れる光 */
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: -100px;
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(251, 191, 36, 0.2), transparent);
+            transform: skewX(-20deg);
+            animation: scan 4s infinite;
+            z-index: 3;
+        }
+
+        @keyframes scan {
+            0% { left: -100px; }
+            30% { left: 800px; }
+            100% { left: 800px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" onclick="location.href='https://google.com'">
+        <div class="bg-lines"></div>
+        <div class="scan-line"></div>
+
+        <div class="brand-section">
+            <p class="brand-name"><span>▲</span>Career Accel</p>
+            <p class="brand-sub">CAREER AGENCY</p>
+        </div>
+
+        <div class="message-section">
+            <p class="main-msg"><span>年収150万UP</span>を実現する戦略を。</p>
+            <p class="sub-msg">非公開求人 12,000件以上（2026年4月現在）</p>
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-btn">
+                無料診断スタート
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

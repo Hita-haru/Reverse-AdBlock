@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Ad 300x250</title>
+    <style>
+        /* 基本レイアウト */
+        body, html { margin: 0; padding: 0; overflow: hidden; font-family: "Meiryo", "MS PGothic", sans-serif; }
+        
+        .ad-container {
+            width: 300px;
+            height: 250px;
+            background: #ffffff;
+            border: 1px solid #d1d1d1;
+            box-sizing: border-box;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ヘッダーの青い帯 */
+        .header-bar {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #0d47a1, #1976d2);
+        }
+
+        /* メインコンテンツ */
+        .content {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .brand-name {
+            font-size: 12px;
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-name::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #0d47a1;
+            margin-right: 5px;
+            border-radius: 2px;
+        }
+
+        .main-copy {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #d32f2f;
+            background: linear-gradient(transparent 70%, #ffeb3b 70%);
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        .features li {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li::before {
+            content: "✔";
+            color: #0d47a1;
+            margin-right: 6px;
+            font-weight: bold;
+        }
+
+        /* CTAボタン */
+        .cta-area {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cta-button {
+            width: 80%;
+            background: #fbc02d; /* ゴールド系 */
+            color: #333;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            border-bottom: 3px solid #f9a825;
+        }
+
+        /* アニメーション */
+        .fade-in {
+            animation: fadeIn ease 1s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(5px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ホバーアクション */
+        .ad-container:hover .cta-button {
+            background: #fdd835;
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        /* 法的注釈（金融広告には必須） */
+        .disclaimer {
+            font-size: 9px;
+            color: #999;
+            position: absolute;
+            bottom: 60px;
+            left: 15px;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" onclick="location.href='https://google.com'">
+        <div class="header-bar"></div>
+        
+        <div class="content fade-in">
+            <div class="brand-name">カクウ資産マネジメント</div>
+            <div class="main-copy">
+                その余剰資金、<br>
+                <span class="highlight">年利 3.5%</span> で運用。
+            </div>
+            
+            <ul class="features">
+                <li>最短当日で口座開設</li>
+                <li>プロにお任せの自動運用</li>
+            </ul>
+        </div>
+
+        <div class="disclaimer">
+            ※投資にはリスクが伴います。元本を保証するものではありません。<br>
+            ※登録金融機関：架空財務局長（金商）第xxxx号
+        </div>
+
+        <div class="cta-area">
+            <div class="cta-button">まずは無料診断から</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Style Ad</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* 広告枠全体 */
+        .ad-container {
+            width: 728px;
+            height: 90px;
+            background: #fff;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .ad-container:hover {
+            background: #fafafa;
+        }
+
+        /* 「速報/PR」ラベル */
+        .badge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #e60012; /* ニュースの速報レッド */
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 8px;
+            z-index: 3;
+        }
+
+        /* サムネイル画像エリア（CSSで表現） */
+        .thumb-area {
+            width: 120px;
+            height: 70px;
+            margin-left: 10px;
+            background: linear-gradient(45deg, #ccc, #eee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .thumb-area::after {
+            content: "TREND";
+            color: rgba(0,0,0,0.2);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* テキストコンテンツ */
+        .content-area {
+            flex-grow: 1;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .headline {
+            color: #333;
+            font-size: 19px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #ccc;
+        }
+
+        .ad-container:hover .headline {
+            color: #0033ff;
+            text-decoration-color: #0033ff;
+        }
+
+        .meta-info {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .source {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* 誘導ボタン */
+        .action-area {
+            padding-right: 15px;
+        }
+
+        .read-more {
+            font-size: 12px;
+            color: #666;
+            border: 1px solid #ccc;
+            padding: 5px 12px;
+            border-radius: 2px;
+            background: #fff;
+        }
+
+        /* 広告表示（規約遵守用） */
+        .ad-label {
+            position: absolute;
+            bottom: 2px;
+            right: 5px;
+            font-size: 9px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" onclick="location.href='https://google.com'">
+        <div class="badge">速報</div>
+        
+        <div class="thumb-area">
+            <div style="position:absolute; width:100%; height:100%; background:linear-gradient(transparent 70%, rgba(0,0,0,0.5));"></div>
+        </div>
+
+        <div class="content-area">
+            <p class="headline">「もっと早く知りたかった」2026年、賢い人がこぞって始めている“新習慣”とは？</p>
+            <div class="meta-info">
+                <span class="source">フィクションライフ通信</span>
+                <span class="time">15分前</span>
+            </div>
+        </div>
+
+        <div class="action-area">
+            <div class="read-more">詳しく読む</div>
+        </div>
+
+        <div class="ad-label">広告 [PR]</div>
+    </div>
+
+</body>
+</html>

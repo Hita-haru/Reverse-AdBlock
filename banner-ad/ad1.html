@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Travel Ad</title>
+    <style>
+        /* 広告枠の基本設定 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+        }
+
+        .ad-container {
+            width: 728px;
+            height: 90px;
+            background: linear-gradient(135deg, #004e92, #000428);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+            border: 1px solid #333;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        /* 装飾用の背景アニメーション */
+        .bg-circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -30px;
+            right: -30px;
+            animation: pulse 4s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 0.3; }
+            to { transform: scale(1.2); opacity: 0.6; }
+        }
+
+        /* ロゴセクション */
+        .logo-section {
+            padding-left: 20px;
+            z-index: 2;
+        }
+
+        .logo-text {
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .sub-logo {
+            color: #00d2ff;
+            font-size: 10px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* キャッチコピーセクション */
+        .copy-section {
+            flex-grow: 1;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .main-copy {
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        .sub-copy {
+            color: #ffd700; /* ゴールド */
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* CTA（行動喚起）ボタン */
+        .cta-section {
+            padding-right: 20px;
+            z-index: 2;
+        }
+
+        .cta-button {
+            background: #ff4b2b;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* 光の走るエフェクト */
+        .shine {
+            position: absolute;
+            top: 0;
+            left: -100px;
+            width: 50px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-25deg);
+            animation: shineMove 3s infinite;
+        }
+
+        @keyframes shineMove {
+            0% { left: -100px; }
+            20% { left: 800px; }
+            100% { left: 800px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ad-container" onclick="location.href='https://google.com'">
+        <div class="bg-circle"></div>
+        <div class="shine"></div>
+
+        <div class="logo-section">
+            <p class="logo-text">Fictitious Travel</p>
+            <p class="sub-logo">Experience the Extraordinary</p>
+        </div>
+
+        <div class="copy-section">
+            <p class="main-copy">まだ見ぬ、極上の感動へ。</p>
+            <p class="sub-copy">初夏の特別優待キャンペーン実施中</p>
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-button">今すぐチェック</div>
+        </div>
+    </div>
+
+</body>
+</html>
