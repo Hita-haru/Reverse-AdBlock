@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Reverse Ad block",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "逆広告ブロッカーです。擬似的な広告を表示します",
     "web_accessible_resources": [
         {
